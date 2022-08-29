@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Example\FirstController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,5 @@ Route::get('/about', function(){
 Route::get('/country', function(){
     return view('country');
 })->middleware('country');
+
+Route::get('/blog', [FirstController::class, 'index'])->name('blog');
